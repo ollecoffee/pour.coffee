@@ -1,0 +1,29 @@
+---
+export interface Props {
+	title: string;
+}
+
+import ThemeSelect from './ThemeSelect.astro';
+---
+<div
+		class="sticky lg:shadow-none lg:backdrop-blur-none top-0 z-30 flex h-16 w-full justify-center bg-opacity-90 backdrop-blur transition-all duration-100 bg-base-100 text-base-content shadow-sm"
+>
+	<div class="navbar">
+		<div class="navbar-start">
+			<label for="drawer-overlay" class="btn btn-square btn-ghost lg:hidden">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+					 class="inline-block w-5 h-5 stroke-current"
+				>
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+						  d="M4 6h16M4 12h16M4 18h16"></path>
+				</svg>
+			</label>
+		</div>
+		<div class="navbar-center">
+			<a class="btn btn-ghost normal-case text-xl lg:hidden" href="/">Olle Korkmaz Zillén ☕️️</a>
+		</div>
+		<div class="navbar-end">
+			{<ThemeSelect/>}
+		</div>
+	</div>
+</div>

@@ -1,0 +1,3 @@
+{
+  "extends": ["github>ollecoffee/olle.config:renovate.json5"]
+}

@@ -1,0 +1,24 @@
+---
+import "../styles/global.css";
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/config.json';
+
+---
+
+<BaseLayout>
+
+    <div class="pb-12 mt-5">
+      <div class="text-xl py-1">Hey there ☕️</div>
+      <div class="text-5xl font-bold">I'm Olle Korkmaz Zillén</div>
+      <div class="text-3xl py-3 font-bold">Software Engineer and Coffee Enthusiast</div>
+      <div class="py-2">
+        <text class="text-lg">
+          This will very soon be a pour over coffee guide, brewing tips! Come back later to learn how to brew the perfect cup of coffee at home.
+          </text>
+      </div>
+      <div class="mt-8 flex items-center space-x-3">
+        <a class="btn btn-lg btn-soft" href={site.linkedin_url} target="_blank">Let's connect!</a>
+      </div>
+    </div>
+
+</BaseLayout>
