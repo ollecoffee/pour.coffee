@@ -2,9 +2,16 @@
 const today = new Date();
 ---
 
-<footer class="footer footer-center block mb-5 pt-10 sticky top-[100vh]">
-	<div class="pb-2">
-		&copy; {today.getFullYear()} <a href="https://olle.coffee" target="_blank">Olle Korkmaz Zillén ☕️</a>
+<footer class="footer footer-center mb-5 pt-10 sticky top-[100vh]">
+	<div class="pb-2 inline-flex items-center gap-1">
+		&copy; {today.getFullYear()}
+		<a
+			href="https://olle.coffee"
+			target="_blank"
+			class="underline hover:no-underline"
+		>
+			Olle Korkmaz Zillén ☕️
+		</a>
 	</div>
 </footer>
 <style></style>
