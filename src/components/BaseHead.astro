@@ -12,7 +12,7 @@ export interface Props {
     ogType?: string;
 }
 
-const { title, description, image = '/social-olle.webp', ogType = 'website' } = Astro.props;
+const { title, description, image = '/pour-coffee.webp', ogType = 'website' } = Astro.props;
 let resolvedImageReference: string;
 if (typeof image === 'string') {
     resolvedImageReference = image;
