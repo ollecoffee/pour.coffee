@@ -3,7 +3,6 @@
 	"baseurl": "https://pour.coffee",
 	"description": "Welcome to Olles Pour Over Coffee Guide",
 	"title": "Olles Pour Over Coffee",
-	"github_url": "https://github.com/ollecoffee",
-	"linkedin_url": "https://www.linkedin.com/in/ollekz"
+	"blog_url": "https://olle.coffee"
   }
 }
