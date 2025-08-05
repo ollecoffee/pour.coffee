@@ -1,3 +1,4 @@
 {
-  "extends": ["github>ollecoffee/olle.config:renovate.json5"]
+  "extends": ["github>ollecoffee/olle.config:renovate.json5",
+  ":automergeAll"]
 }
