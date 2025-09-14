@@ -21,6 +21,6 @@
   },
   "devDependencies": {
     "@types/bun": "1.2.21",
-    "bun": "1.2.21"
+    "bun": "1.2.22"
   }
 }
