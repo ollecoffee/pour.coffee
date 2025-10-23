@@ -15,7 +15,7 @@
     "@astrojs/rss": "4.0.13",
     "@astrojs/sitemap": "3.6.0",
     "@tailwindcss/vite": "4.1.16",
-    "astro": "5.15.0",
+    "astro": "5.15.1",
     "daisyui": "5.3.8",
     "tailwindcss": "4.1.16"
   },
