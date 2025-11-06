@@ -14,10 +14,10 @@
     "@astrojs/mdx": "4.3.10",
     "@astrojs/rss": "4.0.13",
     "@astrojs/sitemap": "3.6.0",
-    "@tailwindcss/vite": "4.1.16",
+    "@tailwindcss/vite": "4.1.17",
     "astro": "5.15.4",
     "daisyui": "5.4.5",
-    "tailwindcss": "4.1.16"
+    "tailwindcss": "4.1.17"
   },
   "devDependencies": {
     "@types/bun": "1.3.1",
