@@ -1,0 +1,27 @@
+---
+export interface Props {
+  step: number;
+  title: string;
+  duration?: string;
+}
+
+const { step, title, duration } = Astro.props;
+---
+
+<div class="flex gap-4 mb-6">
+  <div class="flex flex-col items-center">
+    <div class="w-10 h-10 rounded-full bg-primary text-primary-content flex items-center justify-center font-bold text-lg shrink-0">
+      {step}
+    </div>
+    <div class="w-0.5 bg-primary/20 flex-1 mt-2"></div>
+  </div>
+  <div class="pb-6">
+    <div class="flex items-center gap-2 mb-1">
+      <h3 class="font-bold text-lg m-0">{title}</h3>
+      {duration && <span class="badge badge-outline badge-sm">{duration}</span>}
+    </div>
+    <div class="text-sm opacity-80">
+      <slot />
+    </div>
+  </div>
+</div>

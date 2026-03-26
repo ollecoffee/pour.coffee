@@ -1,0 +1,31 @@
+---
+export interface Props {
+  title: string;
+  coffee: string;
+  water: string;
+  ratio: string;
+  grind: string;
+  temp: string;
+  time: string;
+  badge?: string;
+}
+
+const { title, coffee, water, ratio, grind, temp, time, badge } = Astro.props;
+---
+
+<div class="card card-border bg-base-200">
+  <div class="card-body">
+    <div class="flex items-center gap-2">
+      <h3 class="card-title text-base m-0">{title}</h3>
+      {badge && <span class="badge badge-secondary badge-sm">{badge}</span>}
+    </div>
+    <div class="grid grid-cols-2 gap-2 mt-2 text-sm">
+      <div><span class="opacity-60">Coffee:</span> <strong>{coffee}</strong></div>
+      <div><span class="opacity-60">Water:</span> <strong>{water}</strong></div>
+      <div><span class="opacity-60">Ratio:</span> <strong>{ratio}</strong></div>
+      <div><span class="opacity-60">Grind:</span> <strong>{grind}</strong></div>
+      <div><span class="opacity-60">Temp:</span> <strong>{temp}</strong></div>
+      <div><span class="opacity-60">Time:</span> <strong>{time}</strong></div>
+    </div>
+  </div>
+</div>

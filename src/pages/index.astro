@@ -1,25 +1,351 @@
 ---
 import "../styles/global.css";
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateCard from '../components/AffiliateCard.astro';
+import BrewStep from '../components/BrewStep.astro';
+import RecipeCard from '../components/RecipeCard.astro';
 import { site } from '../data/config.json';
-
 ---
 
-<BaseLayout>
+<BaseLayout
+  title="pour.coffee: a no-nonsense pour over guide"
+  description="I got tired of 2000-word blog posts that bury the recipe. Here's how I actually brew pour over coffee every morning."
+>
 
-    <div class="pb-12 mt-5">
-      <div class="text-xl py-1">Hey there ☕️</div>
-      <div class="text-5xl font-bold">I'm Olle Korkmaz Zillén</div>
-      <div class="text-3xl py-3 font-bold">Software Engineer and Pour Over Enthusiast</div>
-      <div class="py-2">
-        <text class="text-lg">
-          This will very soon be a pour over coffee guide, brewing tips! ☕️
-          Come back later to learn how to brew the perfect cup of coffee at home.
-          </text>
+  <!-- Hero -->
+  <div class="pb-8 mt-5">
+    <div class="text-xl py-1">Hey there ☕️</div>
+    <div class="text-5xl font-bold">pour.coffee</div>
+    <div class="text-2xl py-3 opacity-75">The guide I wish I had when I started</div>
+    <p class="text-lg max-w-prose">
+      I'm Olle, a software engineer by day and pour over nerd every morning. I got tired of googling the same ratios and scrolling through life stories to find a brew time. So I made this.
+    </p>
+    <p class="text-lg max-w-prose mt-2">
+      No fluff. Just how to make a really good cup of coffee with a cone and some hot water.
+    </p>
+    <div class="mt-4 flex flex-wrap gap-2">
+      <a class="btn btn-primary" href="#getting-started">Show me how</a>
+      <a class="btn btn-soft" href="#equipment">What do I need?</a>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Why Pour Over — personal take -->
+  <section class="py-6">
+    <h2 class="text-3xl font-bold mb-4">Why I switched to pour over</h2>
+    <p class="mb-4">I used to drink drip machine coffee and thought it was fine. Then a friend handed me a V60 cup and I realized I'd been drinking hot brown water for years. Here's what sold me:</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="card bg-base-200">
+        <div class="card-body">
+          <h3 class="card-title text-base">You're the barista</h3>
+          <p class="text-sm opacity-75">Water temp, grind size, pour speed. You pick all of it. It's like cooking vs. microwaving. Same ingredients, completely different result.</p>
+        </div>
       </div>
-      <div class="mt-8 flex items-center space-x-3">
-		  <a class="btn btn-lg btn-soft" href={site.blog_url} target="_blank">Read my blog here!</a>
+      <div class="card bg-base-200">
+        <div class="card-body">
+          <h3 class="card-title text-base">It actually tastes like something</h3>
+          <p class="text-sm opacity-75">Ethiopian beans that taste like blueberries. Guatemalan coffee that's basically chocolate. You don't get that from a Keurig.</p>
+        </div>
+      </div>
+      <div class="card bg-base-200">
+        <div class="card-body">
+          <h3 class="card-title text-base">Cheaper than my cafe habit</h3>
+          <p class="text-sm opacity-75">My whole setup cost about the same as two weeks of oat milk lattes. Filters are like 2 cents each. Do the math.</p>
+        </div>
       </div>
     </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Equipment -->
+  <section id="equipment" class="py-6 scroll-mt-20">
+    <h2 class="text-3xl font-bold mb-2">Gear</h2>
+    <p class="opacity-75 mb-6">You need four things. That's it. I've tried a lot of stuff over the years and these are the ones I actually kept using.</p>
+
+    <h3 class="text-xl font-bold mb-4">Dripper</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+      <AffiliateCard
+        name="Hario V60 02 Ceramic"
+        description="This is what I use every morning. The ceramic stays hot, the ribs let air escape so it drains evenly. It's $25 and basically indestructible."
+        link="https://www.amazon.com/dp/B000P4D5HG?tag=ollecoffee03-21"
+        price="~$25"
+        badge="What I use"
+      />
+      <AffiliateCard
+        name="Kalita Wave 185"
+        description="Flat bottom, three small holes. Way more forgiving if your pour technique is still shaky. I recommend this one to friends who are just starting out."
+        link="https://www.amazon.com/dp/B004W5L1XY?tag=ollecoffee03-21"
+        price="~$35"
+        badge="Beginner-friendly"
+      />
+    </div>
+
+    <h3 class="text-xl font-bold mb-4">Grinder</h3>
+    <p class="text-sm opacity-75 mb-4">This matters more than the dripper. Seriously. A $200 dripper with a blade grinder will taste worse than a $5 plastic V60 with a decent burr grinder.</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+      <AffiliateCard
+        name="Wilfa Svart"
+        description="I've used mine every single day for 10 years and it's still going strong. Consistent grind, dead simple to use, and it looks good on the counter. This is the one I recommend to everyone."
+        link="https://www.amazon.com/s?k=Wilfa+Svart+coffee+grinder&tag=ollecoffee03-21"
+        price="~$140"
+        badge="What I use, 10 years and counting"
+      />
+      <AffiliateCard
+        name="Timemore C2 Hand Grinder"
+        description="If you want to spend less, a hand grinder is the way. Steel burrs, surprisingly even grind. You'll spend about 30 seconds grinding a dose."
+        link="https://www.amazon.com/dp/B0833SDN8M?tag=ollecoffee03-21"
+        price="~$60"
+        badge="Budget option"
+      />
+    </div>
+
+    <h3 class="text-xl font-bold mb-4">Kettle</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+      <AffiliateCard
+        name="Brewista Artisan Kettle"
+        description="This is my kettle. Variable temp, gooseneck spout, holds temperature well. It's not the prettiest on the market but it just works, and that's what I care about at 6am."
+        link="https://www.amazon.com/dp/B0DK51JM3T?tag=ollecoffee03-21"
+        price="~$90"
+        badge="What I use"
+      />
+      <AffiliateCard
+        name="Fellow Stagg EKG"
+        description="The one everyone puts on Instagram. Genuinely great pour control and it looks beautiful. Costs more than the Brewista for essentially the same job, but if aesthetics matter to you, go for it."
+        link="https://www.amazon.com/dp/B077JBQZPX?tag=ollecoffee03-21"
+        price="~$165"
+        badge="The pretty one"
+      />
+    </div>
+
+    <h3 class="text-xl font-bold mb-4">Scale</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+      <AffiliateCard
+        name="Wacaco Exagram Pro"
+        description="Just got this one and it's really nice. Thin, responsive, built-in timer, and it fits under a V60 without hanging off the edge. My new daily scale."
+        link="https://www.amazon.com/dp/B0D7378WJL?tag=ollecoffee03-21"
+        price="~$70"
+        badge="What I use"
+      />
+      <AffiliateCard
+        name="Literally any kitchen scale"
+        description="If it reads 0.1g, it works. I used a cheap Amazon scale for ages before upgrading. Pair with your phone timer. No shame."
+        link="https://www.amazon.com/s?k=0.1g+kitchen+scale&tag=ollecoffee03-21"
+        price="~$12"
+        badge="Just get started"
+      />
+    </div>
+
+    <div class="alert alert-info">
+      <span>Don't forget <strong>filters</strong>! V60 filters and Kalita Wave filters are different shapes. Get the ones that match your dripper.</span>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Getting Started / Step-by-Step -->
+  <section id="getting-started" class="py-6 scroll-mt-20">
+    <h2 class="text-3xl font-bold mb-2">How I brew (step by step)</h2>
+    <p class="opacity-75 mb-6">This is my daily V60 recipe. Nothing fancy, just solid coffee every time. The whole thing takes about 4 minutes including setup.</p>
+
+    <div class="card card-border bg-base-200 p-4 mb-8">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center text-sm">
+        <div><div class="font-bold text-primary text-lg">15g</div>Coffee</div>
+        <div><div class="font-bold text-primary text-lg">250g</div>Water</div>
+        <div><div class="font-bold text-primary text-lg">93°C</div>Temperature</div>
+        <div><div class="font-bold text-primary text-lg">~3 min</div>Total Time</div>
+      </div>
+    </div>
+
+    <BrewStep step={1} title="Boil water" duration="~2 min">
+      <p>Target <strong>93°C (200°F)</strong>. No thermometer? Just boil it and wait 30 seconds. Close enough.</p>
+    </BrewStep>
+
+    <BrewStep step={2} title="Grind" duration="~30 sec">
+      <p>Weigh out <strong>15g</strong>, grind medium-fine. Think table salt. If you're using a Timemore C2, that's about 14–16 clicks.</p>
+    </BrewStep>
+
+    <BrewStep step={3} title="Rinse the filter">
+      <p>Stick the filter in the dripper, pour hot water through it. This gets rid of the papery taste and warms everything up. Dump the rinse water.</p>
+    </BrewStep>
+
+    <BrewStep step={4} title="Bloom" duration="0:00–0:45">
+      <p>Dump in the grounds, start your timer, pour <strong>~40g of water</strong> in a slow spiral. The bed will puff up and bubble as CO₂ escapes. Fresh coffee blooms more. Wait until 0:45.</p>
+    </BrewStep>
+
+    <BrewStep step={5} title="Main pour" duration="0:45–1:30">
+      <p>Pour in slow circles from the center out. Don't hit the paper walls. Bring it up to <strong>~150g</strong>. Take your time, a thin steady stream beats a fast splash.</p>
+    </BrewStep>
+
+    <BrewStep step={6} title="Top up" duration="1:30–2:00">
+      <p>Same circles, bring it to <strong>250g total</strong>. You're done pouring.</p>
+    </BrewStep>
+
+    <BrewStep step={7} title="Wait" duration="2:00–3:00">
+      <p>Let it drain. Should finish somewhere around 2:30–3:00. If it gushes through in 90 seconds, grind finer. If it's still dripping at 4 minutes, grind coarser. That's the whole game.</p>
+    </BrewStep>
+
+    <div class="flex gap-2 mt-2 mb-4">
+      <div class="w-10 shrink-0"></div>
+      <div class="alert alert-success">
+        <span>Give the cup a swirl and let it cool for a minute. It actually tastes better once it's not scalding.</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Recipes -->
+  <section id="recipes" class="py-6 scroll-mt-20">
+    <h2 class="text-3xl font-bold mb-2">Other recipes I like</h2>
+    <p class="opacity-75 mb-6">Once you've got the basic one dialed in, mess around with these.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <RecipeCard
+        title="My daily driver"
+        coffee="15g"
+        water="250g"
+        ratio="1:16.7"
+        grind="Medium-fine"
+        temp="93°C / 200°F"
+        time="2:30–3:00"
+        badge="Start here"
+      />
+      <RecipeCard
+        title="Hoffmann method"
+        coffee="15g"
+        water="250g"
+        ratio="1:16.7"
+        grind="Medium (finer than you'd think)"
+        temp="Boiling"
+        time="3:00–3:30"
+      />
+      <RecipeCard
+        title="Need-to-wake-up"
+        coffee="18g"
+        water="250g"
+        ratio="1:13.9"
+        grind="Medium"
+        temp="92°C / 198°F"
+        time="2:30–3:00"
+      />
+      <RecipeCard
+        title="Iced (summer savior)"
+        coffee="20g"
+        water="150g hot + 100g ice in cup"
+        ratio="1:12.5"
+        grind="Medium-fine"
+        temp="96°C / 205°F"
+        time="2:00–2:30"
+        badge="Hot weather"
+      />
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Troubleshooting -->
+  <section class="py-6">
+    <h2 class="text-3xl font-bold mb-2">When it tastes bad</h2>
+    <p class="opacity-75 mb-4">It happens. Here's the cheat sheet I taped to my kitchen wall when I started.</p>
+    <div class="overflow-x-auto">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>What's wrong</th>
+            <th>Probably because</th>
+            <th>Try this</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Sour, sharp, tea-like</td>
+            <td>Under-extracted</td>
+            <td>Grind finer or use hotter water</td>
+          </tr>
+          <tr>
+            <td>Bitter, ashy, harsh</td>
+            <td>Over-extracted</td>
+            <td>Grind coarser or use cooler water</td>
+          </tr>
+          <tr>
+            <td>Drains in under 2 min</td>
+            <td>Too coarse</td>
+            <td>Grind finer</td>
+          </tr>
+          <tr>
+            <td>Still dripping after 4 min</td>
+            <td>Too fine, or fines clogging</td>
+            <td>Grind coarser. If it keeps happening, your grinder might be producing too many fines</td>
+          </tr>
+          <tr>
+            <td>Muddy, gritty, sludgy</td>
+            <td>Blade grinder or torn filter</td>
+            <td>Switch to a burr grinder. Check your filter isn't ripped</td>
+          </tr>
+          <tr>
+            <td>Tastes different every day</td>
+            <td>You're eyeballing it</td>
+            <td>Use a scale. Seriously. This one fix changed everything for me</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Coffee Beans -->
+  <section class="py-6">
+    <h2 class="text-3xl font-bold mb-2">On beans</h2>
+    <p class="opacity-75 mb-4">Your gear doesn't matter if the beans are stale. I learned this the hard way after buying a kilo of pre-ground supermarket coffee.</p>
+
+    <div class="space-y-4">
+      <div class="collapse collapse-arrow bg-base-200">
+        <input type="radio" name="beans-accordion" checked />
+        <div class="collapse-title font-bold">Look for a roast date</div>
+        <div class="collapse-content text-sm">
+          <p>Not a "best by" date, an actual roast date. Coffee peaks around 1 to 4 weeks after roasting. No roast date on the bag? That's a red flag. They're hiding something (it's staleness).</p>
+        </div>
+      </div>
+      <div class="collapse collapse-arrow bg-base-200">
+        <input type="radio" name="beans-accordion" />
+        <div class="collapse-title font-bold">Light or medium roast for pour over</div>
+        <div class="collapse-content text-sm">
+          <p>Dark roast in a pour over mostly tastes like... dark roast. The whole point of this method is tasting what makes a coffee unique. Lighter roasts let that come through.</p>
+        </div>
+      </div>
+      <div class="collapse collapse-arrow bg-base-200">
+        <input type="radio" name="beans-accordion" />
+        <div class="collapse-title font-bold">Single origins are worth trying</div>
+        <div class="collapse-content text-sm">
+          <p>Blends are fine, but single origins are where it gets interesting. My first "whoa" moment was an Ethiopian Yirgacheffe that genuinely tasted like blueberries. I thought people were making that up. They weren't.</p>
+        </div>
+      </div>
+      <div class="collapse collapse-arrow bg-base-200">
+        <input type="radio" name="beans-accordion" />
+        <div class="collapse-title font-bold">Grind fresh, always</div>
+        <div class="collapse-content text-sm">
+          <p>Ground coffee goes stale in like 15 minutes. I know that sounds dramatic but do a side-by-side sometime. Pre-ground vs. fresh ground from the same bag. Night and day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- CTA -->
+  <section class="py-6 mb-8">
+    <div class="card bg-primary text-primary-content">
+      <div class="card-body text-center">
+        <h2 class="card-title justify-center text-2xl">That's basically it</h2>
+        <p>I write about coffee (and other stuff) on my blog. Gear reviews, weird experiments, the occasional recipe that actually works.</p>
+        <div class="card-actions justify-center mt-2">
+          <a class="btn btn-neutral" href={site.blog_url} target="_blank">Check out the blog</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
 </BaseLayout>

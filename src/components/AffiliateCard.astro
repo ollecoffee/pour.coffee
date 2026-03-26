@@ -1,0 +1,29 @@
+---
+export interface Props {
+  name: string;
+  description: string;
+  link: string;
+  price?: string;
+  badge?: string;
+  image?: string;
+}
+
+const { name, description, link, price, badge, image } = Astro.props;
+---
+
+<a href={link} target="_blank" rel="nofollow noopener sponsored" class="card card-border bg-base-200 hover:shadow-lg transition-shadow duration-200 no-underline">
+  {image && (
+    <figure class="px-6 pt-6">
+      <img src={image} alt={name} class="rounded-xl max-h-48 object-contain" loading="lazy" />
+    </figure>
+  )}
+  <div class="card-body">
+    {badge && <span class="badge badge-primary badge-sm">{badge}</span>}
+    <h3 class="card-title text-base">{name}</h3>
+    <p class="text-sm opacity-75">{description}</p>
+    <div class="card-actions justify-between items-center mt-2">
+      {price && <span class="font-bold text-primary">{price}</span>}
+      <span class="btn btn-primary btn-sm">Check Price</span>
+    </div>
+  </div>
+</a>
