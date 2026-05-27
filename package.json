@@ -13,9 +13,9 @@
   "dependencies": {
     "@astrojs/mdx": "5.0.6",
     "@astrojs/rss": "4.0.18",
-    "@astrojs/sitemap": "3.7.2",
+    "@astrojs/sitemap": "3.7.3",
     "@tailwindcss/vite": "4.3.0",
-    "astro": "6.3.7",
+    "astro": "6.3.8",
     "daisyui": "5.5.20",
     "tailwindcss": "4.3.0"
   },
