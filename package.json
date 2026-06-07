@@ -16,7 +16,7 @@
     "@astrojs/sitemap": "3.7.3",
     "@tailwindcss/vite": "4.3.0",
     "astro": "6.4.4",
-    "daisyui": "5.5.20",
+    "daisyui": "5.5.23",
     "tailwindcss": "4.3.0"
   },
   "devDependencies": {
