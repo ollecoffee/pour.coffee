@@ -25,4 +25,4 @@ jobs:
       - name: Checkout your repository using git
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
       - name: Install, build, and upload your site
-        uses: ollecoffee/action@aa6513911ed78911c4861e7cbfd1899b17ec7b4a # v6.1.1
+        uses: withastro/action@b7d53628f8b666036b0238aadb0b984a2a489f26 # v6.1.1
