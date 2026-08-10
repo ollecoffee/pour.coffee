@@ -12,7 +12,7 @@ export interface Props {
     ogType?: string;
 }
 
-const { title, description, image = '/pour-coffee.webp', ogType = 'website' } = Astro.props;
+const { title, description, image = '/pour-coffee.png', ogType = 'website' } = Astro.props;
 let resolvedImageReference: string;
 if (typeof image === 'string') {
     resolvedImageReference = image;
@@ -27,8 +27,8 @@ if (typeof image === 'string') {
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/webp" sizes="32x32" href="/favicon-32x32.webp" />
-<link rel="icon" type="image/webp" sizes="16x16" href="/favicon-16x16.webp" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 <meta name="generator" content={Astro.generator} />
 
 <!-- Primary Meta Tags -->
