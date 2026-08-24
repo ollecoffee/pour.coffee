@@ -1,0 +1,19 @@
+{
+  "nodeModulesDir": "auto",
+  "tasks": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "imports": {
+    "@astrojs/mdx": "npm:@astrojs/mdx@7.0.7",
+    "@astrojs/rss": "npm:@astrojs/rss@4.0.19",
+    "@astrojs/sitemap": "npm:@astrojs/sitemap@3.7.3",
+    "@tailwindcss/vite": "npm:@tailwindcss/vite@4.3.3",
+    "astro": "npm:astro@7.2.4",
+    "daisyui": "npm:daisyui@5.7.20",
+    "tailwindcss": "npm:tailwindcss@4.3.3"
+  }
+}

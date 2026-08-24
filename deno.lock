@@ -3069,16 +3069,14 @@
     }
   },
   "workspace": {
-    "packageJson": {
-      "dependencies": [
-        "npm:@astrojs/mdx@7.0.7",
-        "npm:@astrojs/rss@4.0.19",
-        "npm:@astrojs/sitemap@3.7.3",
-        "npm:@tailwindcss/vite@4.3.3",
-        "npm:astro@7.2.4",
-        "npm:daisyui@5.7.20",
-        "npm:tailwindcss@4.3.3"
-      ]
-    }
+    "dependencies": [
+      "npm:@astrojs/mdx@7.0.7",
+      "npm:@astrojs/rss@4.0.19",
+      "npm:@astrojs/sitemap@3.7.3",
+      "npm:@tailwindcss/vite@4.3.3",
+      "npm:astro@7.2.4",
+      "npm:daisyui@5.7.20",
+      "npm:tailwindcss@4.3.3"
+    ]
   }
 }
