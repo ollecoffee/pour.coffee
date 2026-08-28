@@ -12,7 +12,7 @@
     "@astrojs/rss": "npm:@astrojs/rss@4.0.19",
     "@astrojs/sitemap": "npm:@astrojs/sitemap@3.7.3",
     "@tailwindcss/vite": "npm:@tailwindcss/vite@4.3.3",
-    "astro": "npm:astro@7.2.7",
+    "astro": "npm:astro@7.2.8",
     "daisyui": "npm:daisyui@5.7.22",
     "sharp": "npm:sharp@^0.35.3",
     "tailwindcss": "npm:tailwindcss@4.3.3"
