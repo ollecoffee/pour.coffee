@@ -6,7 +6,7 @@
     "npm:@astrojs/sitemap@3.7.4": "3.7.4",
     "npm:@tailwindcss/vite@4.3.3": "4.3.3_vite@8.2.2",
     "npm:astro@7.2.10": "7.2.10_@astrojs+markdown-remark@7.2.4_@emnapi+core@1.11.1_@emnapi+runtime@1.11.3",
-    "npm:daisyui@5.7.22": "5.7.22",
+    "npm:daisyui@5.7.23": "5.7.23",
     "npm:sharp@~0.35.3": "0.35.4",
     "npm:tailwindcss@4.3.3": "4.3.3"
   },
@@ -660,7 +660,6 @@
       "integrity": "sha512-UMduMbqO5s5zF2NkNacMT/yK5Y5QiKvWr2+50bzIIxFDwVJ2h49b+oyjaCGPhJxd2/gC2x39EHv/gHVuu36x2Q==",
       "dependencies": [
         "@emnapi/core",
-        "@emnapi/runtime@1.11.1",
         "@tybys/wasm-util"
       ]
     },
@@ -1179,8 +1178,8 @@
         "css-tree@2.2.1"
       ]
     },
-    "daisyui@5.7.22": {
-      "integrity": "sha512-pYii+2NCN0+OIL6Lpuc054LK0QJeNv+GRK9UzN1GRmjdYhYO6WFl0QLoj5oPcitPD7o+okiiI0SKFkn641TxmA=="
+    "daisyui@5.7.23": {
+      "integrity": "sha512-Jp5VuhfpLz9zLGEB1VTZFTSAcUn02qMazb55RSciY7V4xQgmzYm3Af160gkQc3OnMVfDUwnQXvwu4O4MwoK1NQ=="
     },
     "debug@4.4.3": {
       "integrity": "sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA==",
@@ -3056,7 +3055,7 @@
       "npm:@astrojs/sitemap@3.7.4",
       "npm:@tailwindcss/vite@4.3.3",
       "npm:astro@7.2.10",
-      "npm:daisyui@5.7.22",
+      "npm:daisyui@5.7.23",
       "npm:sharp@~0.35.3",
       "npm:tailwindcss@4.3.3"
     ]
