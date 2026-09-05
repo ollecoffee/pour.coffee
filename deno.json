@@ -13,7 +13,7 @@
     "@astrojs/sitemap": "npm:@astrojs/sitemap@3.7.4",
     "@tailwindcss/vite": "npm:@tailwindcss/vite@4.3.3",
     "astro": "npm:astro@7.2.10",
-    "daisyui": "npm:daisyui@5.7.27",
+    "daisyui": "npm:daisyui@5.7.28",
     "sharp": "npm:sharp@^0.35.3",
     "tailwindcss": "npm:tailwindcss@4.3.3"
   }
