@@ -6,7 +6,7 @@
     "npm:@astrojs/sitemap@3.7.4": "3.7.4",
     "npm:@tailwindcss/vite@4.3.3": "4.3.3_vite@8.2.2",
     "npm:astro@7.3.2": "7.3.2_@emnapi+core@1.11.1_@emnapi+runtime@1.11.3",
-    "npm:daisyui@5.7.28": "5.7.28",
+    "npm:daisyui@5.7.32": "5.7.32",
     "npm:sharp@~0.35.3": "0.35.4",
     "npm:tailwindcss@4.3.3": "4.3.3"
   },
@@ -1058,8 +1058,8 @@
         "css-tree@2.2.1"
       ]
     },
-    "daisyui@5.7.28": {
-      "integrity": "sha512-BxQap2QOj7NQy5nEsjTHRmybmUZP3t+O5G6vfdidZuptBsh/QyKN9wbdrGDZk198fMI3UyYnA/rCWlggZIhGnw=="
+    "daisyui@5.7.32": {
+      "integrity": "sha512-8JQFneb+okHxzPimTGvRKX+5XF03GyAwGw7BaV6+6XpzW0klGuzc4rdfUpLQxIYPKEziwwlrsYfcxoltF2Rowg=="
     },
     "defu@6.1.7": {
       "integrity": "sha512-7z22QmUWiQ/2d0KkdYmANbRUVABpZ9SNYyH5vx6PZ+nE5bcC0l7uFvEfHlyld/HcGBFTL536ClDt3DEcSlEJAQ=="
@@ -1996,7 +1996,7 @@
       "npm:@astrojs/sitemap@3.7.4",
       "npm:@tailwindcss/vite@4.3.3",
       "npm:astro@7.3.2",
-      "npm:daisyui@5.7.28",
+      "npm:daisyui@5.7.32",
       "npm:sharp@~0.35.3",
       "npm:tailwindcss@4.3.3"
     ]
