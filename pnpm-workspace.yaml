@@ -1,0 +1,4 @@
+# esbuild links a platform-specific binary in its postinstall; pnpm blocks build
+# scripts by default and Astro's build fails without it.
+allowBuilds:
+  esbuild: true
