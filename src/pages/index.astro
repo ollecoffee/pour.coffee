@@ -166,7 +166,7 @@ import { site } from '../data/config.json';
       </div>
       <p id="servings-out" class="text-sm mt-3" aria-live="polite">Scaled for 1 cup</p>
       <p id="servings-note" class="text-sm text-warning mt-1 hidden" aria-live="polite">
-        Over a litre of water. That is more than a V60 03 holds, so brew it in two batches.
+        More water than a V60 02 brews in one go. Split it into two batches.
       </p>
     </div>
 
@@ -377,10 +377,10 @@ import { site } from '../data/config.json';
     const note = document.getElementById("servings-note");
     const targets = document.querySelectorAll("[data-scale]");
 
-    // Hario rates a V60 03 at six cups, but it counts a "cup" as ~150ml while this
-    // recipe pours 250g each, so its ~1000ml runs out at four of ours.
+    // The dripper is the limit, not the server. Hario rates an 02 at four cups but
+    // counts a "cup" as ~150ml, so its ~500ml runs out at two of this recipe's.
     const WATER_PER_CUP_G = 250;
-    const DRIPPER_CAPACITY_G = 1000;
+    const DRIPPER_CAPACITY_G = 500;
 
     const render = () => {
       const cups = Number(slider.value);
