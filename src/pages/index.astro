@@ -149,10 +149,32 @@ import { site } from '../data/config.json';
     <h2 class="text-3xl font-bold mb-2">How I brew (step by step)</h2>
     <p class="opacity-75 mb-6">This is my daily V60 recipe. Nothing fancy, just solid coffee every time. The whole thing takes about 4 minutes including setup.</p>
 
+    <div class="card card-border bg-base-200 p-4 mb-4">
+      <label class="font-bold text-sm" for="servings">Brewing for how many?</label>
+      <input
+        id="servings"
+        type="range"
+        min="1"
+        max="6"
+        value="1"
+        step="1"
+        class="range range-primary mt-3"
+        aria-describedby="servings-out"
+      />
+      <div class="flex justify-between px-2 text-xs opacity-60 mt-1" aria-hidden="true">
+        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span>
+      </div>
+      <p id="servings-out" class="text-sm mt-3" aria-live="polite">Scaled for 1 cup</p>
+      <p id="servings-note" class="text-sm text-warning mt-1 hidden">
+        That is more water than a V60 02 holds in one go. Brew it in batches, or
+        switch to something bigger like a Chemex.
+      </p>
+    </div>
+
     <div class="card card-border bg-base-200 p-4 mb-8">
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center text-sm">
-        <div><div class="font-bold text-primary text-lg">15g</div>Coffee</div>
-        <div><div class="font-bold text-primary text-lg">250g</div>Water</div>
+        <div><div class="font-bold text-primary text-lg"><span data-scale="15">15</span>g</div>Coffee</div>
+        <div><div class="font-bold text-primary text-lg"><span data-scale="250">250</span>g</div>Water</div>
         <div><div class="font-bold text-primary text-lg">93°C</div>Temperature</div>
         <div><div class="font-bold text-primary text-lg">~3 min</div>Total Time</div>
       </div>
@@ -163,7 +185,7 @@ import { site } from '../data/config.json';
     </BrewStep>
 
     <BrewStep step={2} title="Grind" duration="~30 sec">
-      <p>Weigh out <strong>15g</strong>, grind medium-fine. Think table salt. If you're using a Timemore C2, that's about 14–16 clicks.</p>
+      <p>Weigh out <strong><span data-scale="15">15</span>g</strong>, grind medium-fine. Think table salt. If you're using a Timemore C2, that's about 14–16 clicks.</p>
     </BrewStep>
 
     <BrewStep step={3} title="Rinse the filter">
@@ -171,15 +193,15 @@ import { site } from '../data/config.json';
     </BrewStep>
 
     <BrewStep step={4} title="Bloom" duration="0:00–0:45">
-      <p>Dump in the grounds, start your timer, pour <strong>~40g of water</strong> in a slow spiral. The bed will puff up and bubble as CO₂ escapes. Fresh coffee blooms more. Wait until 0:45.</p>
+      <p>Dump in the grounds, start your timer, pour <strong>~<span data-scale="40">40</span>g of water</strong> in a slow spiral. The bed will puff up and bubble as CO₂ escapes. Fresh coffee blooms more. Wait until 0:45.</p>
     </BrewStep>
 
     <BrewStep step={5} title="Main pour" duration="0:45–1:30">
-      <p>Pour in slow circles from the center out. Don't hit the paper walls. Bring it up to <strong>~150g</strong>. Take your time, a thin steady stream beats a fast splash.</p>
+      <p>Pour in slow circles from the center out. Don't hit the paper walls. Bring it up to <strong>~<span data-scale="150">150</span>g</strong>. Take your time, a thin steady stream beats a fast splash.</p>
     </BrewStep>
 
     <BrewStep step={6} title="Top up" duration="1:30–2:00">
-      <p>Same circles, bring it to <strong>250g total</strong>. You're done pouring.</p>
+      <p>Same circles, bring it to <strong><span data-scale="250">250</span>g total</strong>. You're done pouring.</p>
     </BrewStep>
 
     <BrewStep step={7} title="Wait" duration="2:00–3:00">
@@ -347,5 +369,33 @@ import { site } from '../data/config.json';
       </div>
     </div>
   </section>
+
+<script>
+  const slider = document.getElementById("servings");
+
+  if (slider instanceof HTMLInputElement) {
+    const out = document.getElementById("servings-out");
+    const note = document.getElementById("servings-note");
+    const targets = document.querySelectorAll("[data-scale]");
+
+    // A V60 02 tops out around half a litre, so three cups no longer fits one brew.
+    const DRIPPER_CAPACITY_G = 500;
+    const WATER_PER_CUP_G = 250;
+
+    const render = () => {
+      const cups = Number(slider.value);
+
+      for (const el of targets) {
+        el.textContent = String(Number(el.getAttribute("data-scale")) * cups);
+      }
+
+      if (out) out.textContent = `Scaled for ${cups} ${cups === 1 ? "cup" : "cups"}`;
+      if (note) note.classList.toggle("hidden", cups * WATER_PER_CUP_G <= DRIPPER_CAPACITY_G);
+    };
+
+    slider.addEventListener("input", render);
+    render();
+  }
+</script>
 
 </BaseLayout>
