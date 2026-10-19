@@ -165,7 +165,9 @@ import { site } from '../data/config.json';
         <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span>
       </div>
       <p id="servings-out" class="text-sm mt-3" aria-live="polite">Scaled for 1 cup</p>
-      <p id="servings-note" class="text-sm text-warning mt-1 hidden" aria-live="polite"></p>
+      <p id="servings-note" class="text-sm text-warning mt-1 hidden" aria-live="polite">
+        Over a litre of water. That is more than a V60 03 holds, so brew it in two batches.
+      </p>
     </div>
 
     <div class="card card-border bg-base-200 p-4 mb-8">
@@ -375,11 +377,10 @@ import { site } from '../data/config.json';
     const note = document.getElementById("servings-note");
     const targets = document.querySelectorAll("[data-scale]");
 
-    // Hario counts a "cup" as ~150ml, but this recipe pours 250g each, so the
-    // dripper runs out before the slider does. An 02 holds ~500ml, an 03 ~1000ml.
+    // Hario rates a V60 03 at six cups, but it counts a "cup" as ~150ml while this
+    // recipe pours 250g each, so its ~1000ml runs out at four of ours.
     const WATER_PER_CUP_G = 250;
-    const V60_02_CAPACITY_G = 500;
-    const V60_03_CAPACITY_G = 1000;
+    const DRIPPER_CAPACITY_G = 1000;
 
     const render = () => {
       const cups = Number(slider.value);
@@ -391,16 +392,7 @@ import { site } from '../data/config.json';
 
       if (out) out.textContent = `Scaled for ${cups} ${cups === 1 ? "cup" : "cups"}`;
 
-      if (note) {
-        if (water > V60_03_CAPACITY_G) {
-          note.textContent =
-            "Over a litre of water. That is more than any V60 holds, so split it into batches.";
-        } else if (water > V60_02_CAPACITY_G) {
-          note.textContent =
-            "More than a V60 02 holds. Fine in an 03 or a Chemex, otherwise brew it in two goes.";
-        }
-        note.classList.toggle("hidden", water <= V60_02_CAPACITY_G);
-      }
+      if (note) note.classList.toggle("hidden", water <= DRIPPER_CAPACITY_G);
     };
 
     slider.addEventListener("input", render);
